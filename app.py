@@ -137,17 +137,10 @@ def create_image_from_text(
 # -------------------------------
 # 6. Gradio Interface
 # -------------------------------
-demo_examples = [
-    "a serene mountain lake at golden hour, highly detailed, 4k, cinematic lighting",
-    "a futuristic cyborg chef cooking in a neon kitchen, digital art, trending on artstation",
-    "a mystical forest with glowing mushrooms and a tiny fox, fantasy illustration, deep colours",
-    "an abstract explosion of geometric shapes and vibrant gradients, 8k, sharp"
-]
-
 interface = gr.Interface(
     fn=create_image_from_text,
     inputs=[
-        gr.Textbox(label="What do you want to see?", placeholder="Describe your image...", value=demo_examples[0]),
+        gr.Textbox(label="What do you want to see?", placeholder="Describe your image...", value=demo_examples[0][0]),
         gr.Textbox(label="Avoid these elements", value="blurry, ugly, low quality, distorted, bad anatomy, watermark"),
         gr.Slider(minimum=15, maximum=50, step=1, label="Sampling iterations", value=28),
         gr.Slider(minimum=2.0, maximum=15.0, step=0.5, label="Creative freedom (guidance)", value=7.2),
@@ -158,11 +151,11 @@ interface = gr.Interface(
     outputs=gr.Image(label="Generated artwork (PNG)", type="filepath"),
     title="AI Text‑to‑Image Generator (SDXL)",
     description="Original SDXL Image Forge – High‑Resolution Text‑to‑Image Generator",
-    examples=[[ex] for ex in demo_examples]
+    examples=demo_examples   # now each example has all 7 values
 )
 
 # -------------------------------
-# 7. Launch for Hugging Face Spaces
+# 5. Launch for Hugging Face Spaces
 # -------------------------------
 if __name__ == "__main__":
     interface.launch(server_name="0.0.0.0", server_port=7860)
