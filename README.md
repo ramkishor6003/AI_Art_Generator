@@ -28,6 +28,7 @@ A clean, memory-efficient Stable Diffusion XL pipeline built with Gradio. Featur
 Project Live Demo
 
 Project live screen recording:
+
 https://github.com/user-attachments/assets/48b3bf89-fbc7-4537-8b98-9a886a9aa83d
 
 
