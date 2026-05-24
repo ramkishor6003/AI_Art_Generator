@@ -25,6 +25,12 @@ A clean, memory-efficient Stable Diffusion XL pipeline built with Gradio. Featur
 
 ---
 
+Project Live Demo
+
+Project live screen recording:
+https://github.com/user-attachments/assets/8f179f55-c855-4b48-9c8d-f8f8476157fd
+
+
 ## Requirements
 
 - Python 3.9+
